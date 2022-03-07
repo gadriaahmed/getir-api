@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const DBConnection = require('./src/config/db.config')
 const router = require('./src/routes/record.route')
+const InternalServerError = require("../common/exceptions/InternalServerError")
+
 const PORT = 8080;
 
 // create express app
@@ -16,7 +18,9 @@ app.use(bodyParser.json())
 // Connecting to the database
 DBConnection.connect(PORT).then(()=>{
     app.listen(PORT, () => console.log(`Server running on port : ${PORT}`));
-}).catch(()=>{})
+}).catch((err)=>{
+    throw new InternalServerError('Internal Server Error')
+})
 
 app.use('/',router);
 app.use('*', (req, res) =>
