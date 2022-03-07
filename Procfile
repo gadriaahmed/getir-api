@@ -1,1 +1,1 @@
-web: ./bin/www npm start:prod
+web: npm start:prod
