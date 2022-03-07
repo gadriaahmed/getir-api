@@ -21,10 +21,10 @@
     "jest": "^27.5.1",
     "mockingoose": "^2.15.2",
     "mongoose": "^6.2.4",
-    "supertest": "^6.2.2"
+    "supertest": "^6.2.2",
+    "dotenv": "^16.0.0"
   },
   "devDependencies": {
-    "dotenv": "^16.0.0",
     "nodemon": "^2.0.15"
   }
 }
