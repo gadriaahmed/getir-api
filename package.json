@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "start:dev": "nodemon --exec npm start"
+    "start:local": "nodemon --exec npm start ",
+    "start:dev": "set NODE_ENV=.dev.env&& node index.js",
+    "start:prod": "set NODE_ENV=.prod.env&& node index.js"
+
   },
   "keywords": [],
   "author": "",
@@ -15,9 +18,13 @@
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
     "express-validator": "^6.14.0",
-    "mongoose": "^6.2.4"
+    "jest": "^27.5.1",
+    "mockingoose": "^2.15.2",
+    "mongoose": "^6.2.4",
+    "supertest": "^6.2.2"
   },
   "devDependencies": {
+    "dotenv": "^16.0.0",
     "nodemon": "^2.0.15"
   }
 }

@@ -2,10 +2,15 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const DBConnection = require('./src/config/db.config')
 const router = require('./src/routes/record.route')
-const InternalServerError = require("../common/exceptions/InternalServerError")
+const InternalServerError = require("./src/common/exceptions/InternalServerError")
+const path = require("path");
+const dotenv = require('dotenv');
 
-const PORT = 8080;
+dotenv.config({
+    path: path.resolve(__dirname, `${process.env.NODE_ENV}`)
+});
 
+const PORT = process.env.APP_PORT;
 // create express app
 const app = express()
 

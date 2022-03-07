@@ -14,7 +14,7 @@ const rules = () => {
 const validateDate = (req,res,next) => {
     const  errors = validationResult(req);
     if(!errors.isEmpty()){
-        return new ValidationError(res,2,'Start Date should be before the End Date');
+        return new ValidationError(res,2,'Check the format of start and end dates');
     }
     next();
 }
