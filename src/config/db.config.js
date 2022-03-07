@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const DATABASE_URL = 'mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true';
 const DBConnection = {
     connect: async () => {
         // Connecting to the database
-        mongoose.connect(process.env.DATABASE_URL, {
+        mongoose.connect(DATABASE_URL, {
             useNewUrlParser: true
         }).then(() => {
             console.log("Successfully connected to the database");
