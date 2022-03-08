@@ -4,7 +4,7 @@
   "description": "Getir api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll",
     "start": "node index.js",
     "start:local": "nodemon --exec npm start ",
     "start:dev": "set NODE_ENV=.dev.env&& node index.js",
